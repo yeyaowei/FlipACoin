@@ -1,0 +1,32 @@
+﻿<Window x:Class="FlipACoin.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlipACoin"
+        mc:Ignorable="d"
+        Title="帮我选择吧！" Height="297.521" Width="538.43">
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="listBox" Margin="10" Grid.RowSpan="3">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="删除这一项" Click="MenuItem_Click"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <TextBox x:Name="add" TextAlignment="Center" Grid.Column="1" FontSize="30" Margin="10" VerticalAlignment="Center" TextWrapping="NoWrap" Text="回车添加" KeyDown="TextBox_KeyDown"/>
+        <Button x:Name="btn" Content="开始吧！" FontSize="28" Grid.Column="1" Margin="10" Grid.Row="1" Click="Button_Click"/>
+        <GroupBox Header="结果会是...？" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="333" Grid.Column="1" Margin="10,10,0,0" Grid.Row="2">
+            <TextBlock x:Name="result" VerticalAlignment="Center" FontSize="28" TextAlignment="Center"/>
+        </GroupBox>
+    </Grid>
+</Window>
